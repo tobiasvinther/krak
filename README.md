@@ -27,6 +27,7 @@ Thony Dyreborg-Kragh(https://github.com/ThonyDK)
 
 
 ### Member-3
+Jonatan Segal(https://github.com/JonatanSegal)
 
 
 ### Member-4
