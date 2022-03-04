@@ -23,6 +23,7 @@ You should all add your GitHub usename in parenthesis next to your name, so I kn
 Tobias Vinther (https://github.com/tobiasvinther)
 
 ### Member-2
+Thony Dyreborg-Kragh(https://github.com/ThonyDK)
 
 
 ### Member-3
