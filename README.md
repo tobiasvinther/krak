@@ -6,10 +6,13 @@
 Krak
 
 ## Group Contract
-Add a short informal Group Contract, agreed upon by ALL MEMBERS in the group
+- Everyone puts in the time and does their best.
+- People show up on time.
+- People make sure to check agreed upon communication channels.
+- We keep a nice tone.
 
 ## Branching Strategy 
-Add the name of your selected Branching Strategy
+Feature branching.
 
 ## Link to deployed project
 Add a link (when ready) to your deployed project
@@ -25,12 +28,5 @@ Tobias Vinther (https://github.com/tobiasvinther)
 ### Member-2
 Thony Dyreborg-Kragh(https://github.com/ThonyDK)
 
-
 ### Member-3
 Jonatan Segal(https://github.com/JonatanSegal)
-
-
-### Member-4
-
-
-> Written with [StackEdit](https://stackedit.io/).
