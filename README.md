@@ -30,3 +30,6 @@ Thony Dyreborg-Kragh(https://github.com/ThonyDK)
 
 ### Member-3
 Jonatan Segal(https://github.com/JonatanSegal)
+
+### Minisprint 1
+To-do list: https://trello.com/b/r5jiIhbZ/krak 
