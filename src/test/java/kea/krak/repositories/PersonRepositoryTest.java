@@ -15,14 +15,14 @@ class PersonRepositoryTest {
 
     @Autowired
     PersonRepository personRepository;
-
+    @Autowired
     AddressRepository addressRepository;
 
     @BeforeEach
     void setUp() {
-       //Address a1 = new Address("Main Street", "Farpoint Station", 1);
-        //addressRepository.save(a1);
-        personRepository.save(new Person("p1@email.com", "Jean-Luc", "Picard", 102030, (new Address("Main Street", "Farpoint Station", 1))));
+       Address a1 = new Address("Main Street", "Farpoint Station", 1);
+        addressRepository.save(a1);
+        personRepository.save(new Person("p1@email.com", "Jean-Luc", "Picard", 102030, a1));
     }
 
     @Test
