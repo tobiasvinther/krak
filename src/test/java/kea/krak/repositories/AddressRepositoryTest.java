@@ -1,7 +1,6 @@
 package kea.krak.repositories;
 
 import kea.krak.entities.Address;
-import kea.krak.entities.Person;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,35 +10,27 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
-class PersonRepositoryTest {
+class AddressRepositoryTest {
 
-    @Autowired
-    PersonRepository personRepository;
     @Autowired
     AddressRepository addressRepository;
 
     @BeforeEach
     void setUp() {
-       Address a1 = new Address("Main Street", "Farpoint Station", 1);
+        Address a1 = new Address("Main Street", "Farpoint Station", 1);
+        Address a2 = new Address("Academy Street", "San Fransisco", 2);
         addressRepository.save(a1);
-        personRepository.save(new Person("p1@email.com", "Jean-Luc", "Picard", 102030, a1));
+        addressRepository.save(a2);
     }
 
     @AfterEach
     void tearDown() {
-        personRepository.deleteAll();
         addressRepository.deleteAll();
     }
 
     @Test
     public void testCount() {
-        assertEquals(1, personRepository.count());
-    }
-
-    @Test
-    public void testDelete() {
-        personRepository.delete(personRepository.getById("p1@email.com"));
-        assertEquals(0, personRepository.count());
+        assertEquals(2, addressRepository.count());
     }
 
 }

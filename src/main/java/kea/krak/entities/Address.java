@@ -32,4 +32,9 @@ public class Address {
         this.houseNumber = houseNumber;
         //this.personsAtAddress = personsAtAddress;
     }
+
+    public void addPersonToAddress(Person personToAdd) {
+        personsAtAddress.add(personToAdd);
+    }
+
 }

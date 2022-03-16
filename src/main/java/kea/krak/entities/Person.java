@@ -29,5 +29,6 @@ public class Person {
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.address = address;
+        address.addPersonToAddress(this); //add person to address
     }
 }
