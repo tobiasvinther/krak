@@ -24,6 +24,10 @@ public class Hobby {
     @Column(length = 60)
     String description;
 
+    /*
+    @ManyToOne
+    private Person person;*/
+
     public Hobby() {}
 
     public Hobby(String name, String description) {
