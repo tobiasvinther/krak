@@ -18,11 +18,15 @@ class PersonRepositoryTest {
     @Autowired
     AddressRepository addressRepository;
 
+    private Person p1;
+
     @BeforeEach
     void setUp() {
-       Address a1 = new Address("Main Street", "Farpoint Station", 1);
+        Address a1 = new Address("Main Street", "Farpoint Station", 1);
         addressRepository.save(a1);
-        personRepository.save(new Person("p1@email.com", "Jean-Luc", "Picard", 102030, a1));
+        //personRepository.save(new Person("p1@email.com", "Jean-Luc", "Picard", 102030, a1));
+        p1 = new Person("p1@email.com", "Jean-Luc", "Picard", 102030, a1);
+        personRepository.save(p1);
     }
 
     @AfterEach
@@ -40,6 +44,12 @@ class PersonRepositoryTest {
     public void testDelete() {
         personRepository.delete(personRepository.getById("p1@email.com"));
         assertEquals(0, personRepository.count());
+    }
+
+    //testing if a person is properly put in the address list of residents
+    @Test
+    public void testPersonInAddress() {
+        assertTrue(addressRepository.getById(1).getPersonsAtAddress().contains(p1));
     }
 
 }
