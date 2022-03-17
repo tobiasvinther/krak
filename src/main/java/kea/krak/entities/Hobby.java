@@ -18,11 +18,6 @@ public class Hobby {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    @Column(length = 40)
-    String name;
-
-    @Column(length = 60)
-    String description;
 
     /*
     @ManyToOne
@@ -39,4 +34,10 @@ public class Hobby {
         this.name = body.getName();
         this.description = body.getDescription();
     }
+
+    @Column(length = 40)
+    String name;
+
+    @Column(length = 60)
+    String description;
 }

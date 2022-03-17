@@ -1,5 +1,6 @@
 package kea.krak.services;
 
+import kea.krak.dtos.HobbyRequest;
 import kea.krak.dtos.HobbyResponse;
 import kea.krak.entities.Hobby;
 import kea.krak.repositories.HobbyRepository;
@@ -16,7 +17,6 @@ public class HobbyService {
     public HobbyService(HobbyRepository hobbyRepository) {
         this.hobbyRepository = hobbyRepository;
     }
-
     public List<HobbyResponse> getHobbys() {
         List<Hobby> hobbys = hobbyRepository.findAll();
         return HobbyResponse.getHobbysFromEntities(hobbys);

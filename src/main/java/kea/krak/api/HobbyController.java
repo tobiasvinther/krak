@@ -23,8 +23,9 @@ public class HobbyController {
     public List<HobbyResponse> getHobbys(){
         return hobbyService.getHobbys();
     }
+    /*
     @GetMapping("/{id}")
     public HobbyResponse getHobbys(@PathVariable int id) throws Exception{
         return hobbyService.getHobby(id, false);
-    }
+    }*/
 }
