@@ -1,5 +1,6 @@
 package kea.krak.entities;
 
+import kea.krak.dtos.PersonRequest;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +20,11 @@ public class Person {
 
     @ManyToOne
     private Address address;
+
+    /*
+    @OneToMany
+    private Set<Hobby> hobbies = new HashSet;
+     */
 
     public Person() {
     }
