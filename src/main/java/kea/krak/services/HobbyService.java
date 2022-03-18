@@ -11,16 +11,18 @@ import java.util.List;
 
 @Service
 public class HobbyService {
-
+    //acces to HobbeRepo
     HobbyRepository hobbyRepository;
 
     public HobbyService(HobbyRepository hobbyRepository) {
         this.hobbyRepository = hobbyRepository;
     }
+    //get multiple hobbys
     public List<HobbyResponse> getHobbys() {
         List<Hobby> hobbys = hobbyRepository.findAll();
         return HobbyResponse.getHobbysFromEntities(hobbys);
     }
+    //get a single hobby
     public HobbyResponse getHobby(int id,boolean all) throws Exception {
         Hobby hobby = hobbyRepository.findById(String.valueOf(id)).orElseThrow(()-> new Exception("not found"));
         return new HobbyResponse(hobby, false);

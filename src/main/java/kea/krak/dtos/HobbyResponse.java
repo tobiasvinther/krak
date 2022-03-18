@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 public class HobbyResponse {
 
     int id;
-    //Change CarBrand into a String if you are not using an enum for this field
+
     String name;
     String description;
 
