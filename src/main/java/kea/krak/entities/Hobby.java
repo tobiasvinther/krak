@@ -26,18 +26,18 @@ public class Hobby {
 
     public Hobby() {}
 
-    public Hobby(String name, String description) {
-        this.name = name;
+    public Hobby(String hobbyName, String description) {
+        this.hobbyName = hobbyName;
         this.description = description;
 
     }
     public Hobby(HobbyRequest body) {
-        this.name = body.getName();
+        this.hobbyName = body.getHobbyName();
         this.description = body.getDescription();
     }
 
     @Column(length = 40)
-    String name;
+    String hobbyName;
 
     @Column(length = 60)
     String description;

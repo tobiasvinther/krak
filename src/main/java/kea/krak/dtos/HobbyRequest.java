@@ -10,6 +10,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class HobbyRequest {
-    private String name;
+    private String hobbyName;
     private String description;
 }

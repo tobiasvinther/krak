@@ -21,7 +21,7 @@ public class HobbyResponse {
     String description;
 
     public HobbyResponse(Hobby hobby, boolean includeAll) {
-        this.name = hobby.getName();
+        this.name = hobby.getHobbyName();
         this.description = hobby.getDescription();
         this.id = hobby.getId();
     }
