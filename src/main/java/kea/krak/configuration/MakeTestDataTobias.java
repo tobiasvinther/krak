@@ -34,8 +34,8 @@ public class MakeTestDataTobias implements ApplicationRunner {
     }
 
     public void createDefaultPersons() {
-        p1 = new Person("p1@email.com", "Jean-Luc", "Picard", 102030, a1);
-        p2 = new Person("p2@email.com", "Geordi", "LaForge", 102030, a1);
+        p1 = new Person("user1", "p1@email.com", "123", "Jean-Luc", "Picard", 102030, a1);
+        p2 = new Person("user2", "p2@email.com", "123", "Geordi", "LaForge", 102030, a1);
         personRepository.save(p1);
         personRepository.save(p2);
     }

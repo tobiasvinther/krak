@@ -9,10 +9,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class Person {
-
-    @Id
-    private String email;
+public class Person extends BaseUser {
 
     private String firstName;
     private String lastName;
@@ -29,8 +26,8 @@ public class Person {
     public Person() {
     }
 
-    public Person(String email, String firstName, String lastName, int phoneNumber, Address address) {
-        this.email = email;
+    public Person(String username, String email, String password, String firstName, String lastName, int phoneNumber, Address address) {
+        super(username, email, password);
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
