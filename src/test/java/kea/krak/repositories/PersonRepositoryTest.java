@@ -42,7 +42,7 @@ class PersonRepositoryTest {
 
     @Test
     public void testDelete() {
-        personRepository.delete(personRepository.getById("p1@email.com"));
+        personRepository.delete(personRepository.getById("user1"));
         assertEquals(0, personRepository.count());
     }
 
