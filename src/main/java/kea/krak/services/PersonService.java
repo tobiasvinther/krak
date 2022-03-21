@@ -32,8 +32,12 @@ public class PersonService {
         return personsAsEntities.stream().map(person -> new PersonResponse(person)).collect(Collectors.toList());
     }
 
-    public PersonResponse getPersonByEmail(String email) {
-        return convertPersonToPersonResponse(personRepository.getById(email));
+    public PersonResponse getPersonByUsername(String username) {
+        return convertPersonToPersonResponse(personRepository.getById(username));
+    }
+
+    public Person getPersonAsEntity(String username) {
+        return personRepository.getById(username);
     }
 
 }

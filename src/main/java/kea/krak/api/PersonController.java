@@ -1,11 +1,13 @@
 package kea.krak.api;
 
+import kea.krak.dtos.HobbyRequest;
+import kea.krak.dtos.HobbyResponse;
 import kea.krak.dtos.PersonResponse;
+import kea.krak.repositories.HobbyRepository;
 import kea.krak.services.PersonService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @CrossOrigin
@@ -14,9 +16,11 @@ import java.util.List;
 public class PersonController {
 
     private PersonService personService;
+    private HobbyRepository hobbyRepository;
 
-    public PersonController(PersonService personService) {
+    public PersonController(PersonService personService, HobbyRepository hobbyRepository) {
         this.personService = personService;
+        this.hobbyRepository = hobbyRepository;
     }
 
     /*
@@ -32,10 +36,20 @@ public class PersonController {
     }
 
     @GetMapping("/{username}")
-    public PersonResponse getMembersFromEmail(@PathVariable String username) {
-        return (personService.getPersonByEmail(username));
+    public PersonResponse getMembersFromUsername(@PathVariable String username) {
+        return (personService.getPersonByUsername(username));
     }
 
-    //@PostMapping()
+    /*
+    @PostMapping("/{username}/add-hobby")
+    public ResponseEntity<HobbyResponse> register(@RequestBody HobbyRequest hobbyRequest, @PathVariable String username) {
+        return ResponseEntity.ok(personService.getPersonAsEntity(username).addHobby(hobbyRepository.getById(hobbyRequest.getId())));
+    }
+     */
+    @PostMapping("/{username}/add-hobby")
+    public void addHobby(@RequestBody HobbyRequest hobbyRequest, @PathVariable String username) {
+        personService.getPersonAsEntity(username).addHobby(hobbyRepository.getById(hobbyRequest.getId()));
+    }
+
 
 }
