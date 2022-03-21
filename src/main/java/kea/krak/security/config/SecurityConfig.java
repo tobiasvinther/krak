@@ -94,13 +94,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/api/auth/**").permitAll()
-                .antMatchers(HttpMethod.GET, "/api/message/all").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/members").permitAll()
-                .antMatchers(HttpMethod.GET, "/api/cars").permitAll()
-                .antMatchers(HttpMethod.GET, "/api/cars/{id}").permitAll()
-                .antMatchers(HttpMethod.GET, "/index.html").permitAll()
-                //.antMatchers(HttpMethod.GET, "/api/reservation/{carId}/{date}").permitAll()
-                .antMatchers(HttpMethod.GET, "/api/reservation/free/{carId}/{date}").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/persons/{email}").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/persons").permitAll()
                 // All other endpoints are private
                 .anyRequest().authenticated();
                 //.anyRequest().permitAll();  //Disable Security
