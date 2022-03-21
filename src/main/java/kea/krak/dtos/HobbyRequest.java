@@ -12,5 +12,5 @@ import lombok.Setter;
 public class HobbyRequest {
     private int id;
     private String hobbyName;
-    private String description;
+    //private String description;
 }

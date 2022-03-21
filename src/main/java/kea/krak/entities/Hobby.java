@@ -32,7 +32,7 @@ public class Hobby {
     }
     public Hobby(HobbyRequest body) {
         this.hobbyName = body.getHobbyName();
-        this.description = body.getDescription();
+        //this.description = body.getDescription();
     }
 
     @Column(length = 40)
