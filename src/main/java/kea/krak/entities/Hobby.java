@@ -20,9 +20,8 @@ public class Hobby {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    /*
     @ManyToOne
-    private Person person;*/
+    private Person person;
 
     public Hobby() {}
 

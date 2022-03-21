@@ -11,14 +11,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PersonResponse {
-    private String email;
+    //private String email;
+    private String username;
     private String firstName;
     private String lastName;
     private String city;
 
     //create a PersonResponse object by providing a Person object
     public PersonResponse(Person person) {
-        this.email = person.getEmail();
+        this.username = person.getUsername();
+        //this.email = person.getEmail();
         this.firstName = person.getFirstName();
         this.lastName = person.getLastName();
         this.city = person.getAddress().getCity();

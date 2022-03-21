@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -18,10 +20,8 @@ public class Person extends BaseUser {
     @ManyToOne
     private Address address;
 
-    /*
     @OneToMany
-    private Set<Hobby> hobbies = new HashSet;
-     */
+    private Set<Hobby> hobbies = new HashSet<>();
 
     public Person() {
     }
@@ -34,4 +34,9 @@ public class Person extends BaseUser {
         this.address = address;
         address.addPersonToAddress(this); //add person to address
     }
+
+    public void addHobby(Hobby hobby) {
+        hobbies.add(hobby);
+    }
+
 }

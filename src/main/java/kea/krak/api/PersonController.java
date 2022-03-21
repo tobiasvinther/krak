@@ -31,9 +31,11 @@ public class PersonController {
         return personService.getAllPersons();
     }
 
-    @GetMapping("/{email}")
-    public PersonResponse getMembersFromEmail(@PathVariable String email) {
-        return (personService.getPersonByEmail(email));
+    @GetMapping("/{username}")
+    public PersonResponse getMembersFromEmail(@PathVariable String username) {
+        return (personService.getPersonByEmail(username));
     }
+
+    //@PostMapping()
 
 }
