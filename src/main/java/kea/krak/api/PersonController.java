@@ -3,6 +3,7 @@ package kea.krak.api;
 import kea.krak.dtos.HobbyRequest;
 import kea.krak.dtos.HobbyResponse;
 import kea.krak.dtos.PersonResponse;
+import kea.krak.entities.Hobby;
 import kea.krak.repositories.HobbyRepository;
 import kea.krak.services.HobbyService;
 import kea.krak.services.PersonService;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @CrossOrigin
 @RestController
@@ -41,6 +43,12 @@ public class PersonController {
     @GetMapping("/{username}")
     public PersonResponse getMembersFromUsername(@PathVariable String username) {
         return (personService.getPersonByUsername(username));
+    }
+
+    //todo: create a method in hobby service to convert hobby set to set of hobbyResponses
+    @GetMapping("/{username}/get-hobbies")
+    public Set<Hobby> getPersonHobbies(@PathVariable String username) {
+        return personService.getPersonAsEntity(username).getHobbies();
     }
 
 
