@@ -33,3 +33,19 @@ Jonatan Segal(https://github.com/JonatanSegal)
 
 ### Minisprint 1
 To-do list: https://trello.com/b/r5jiIhbZ/krak 
+
+### Minisprint 2
+- Databasedesign
+- Databasekonstruktion
+- Oprettelse af entity-klasser
+- Oprettelse af repository-klasser
+- Test af repository-klasser
+- Oprettelse af DTO-klasser
+- Oprettelse af serviceklasser
+- Oprettelse af API'er/controllere
+- Få frontend og backend til at snakke sammen
+- Sætte application properties op
+- Opsætning af environment values på Azure
+- Security på login
+
+Kan også ses her: https://trello.com/b/r5jiIhbZ/krak 
