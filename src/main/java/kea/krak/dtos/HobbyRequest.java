@@ -11,5 +11,5 @@ import lombok.Setter;
 @AllArgsConstructor
 public class HobbyRequest {
     private String hobbyName;
-    private String description;
+    private String hobbyDescription;
 }

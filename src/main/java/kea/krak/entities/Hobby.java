@@ -20,25 +20,33 @@ public class Hobby {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
+    @Column(length = 40)
+    String hobbyName;
+
+    @Column(length = 60)
+    String hobbyDescription;
+
+    @OneToMany(mappedBy = "hobby")
+    private Set<Person> personsAtHobby = new HashSet<>();
+
+    /*
+    @ManyToOne
+    @JoinColumn(name = "hobby_id")
+    private Hobby hobby; */
+
     /*
     @ManyToOne
     private Person person;*/
 
     public Hobby() {}
 
-    public Hobby(String hobbyName, String description) {
+    public Hobby(String hobbyName, String hobbyDescription) {
         this.hobbyName = hobbyName;
-        this.description = description;
+        this.hobbyDescription = hobbyDescription;
 
     }
     public Hobby(HobbyRequest body) {
         this.hobbyName = body.getHobbyName();
-        this.description = body.getDescription();
+        this.hobbyDescription = body.getHobbyDescription();
     }
-
-    @Column(length = 40)
-    String hobbyName;
-
-    @Column(length = 60)
-    String description;
 }

@@ -16,18 +16,18 @@ import java.util.stream.Collectors;
 public class HobbyResponse {
 
     int id;
+    String hobbyName;
+    String hobbyDescription;
 
-    String name;
-    String description;
-
-    public HobbyResponse(Hobby hobby, boolean includeAll) {
-        this.name = hobby.getHobbyName();
-        this.description = hobby.getDescription();
+    public HobbyResponse(Hobby hobby) {
+        this.hobbyName = hobby.getHobbyName();
+        this.hobbyDescription = hobby.getHobbyDescription();
         this.id = hobby.getId();
     }
 
+    /*
     public static List<HobbyResponse> getHobbysFromEntities(List<Hobby> hobbys){
         return hobbys.stream().map(hobby-> new HobbyResponse(hobby, false)).collect(Collectors.toList());
         //We will do this together
-    }
+    }*/
 }
