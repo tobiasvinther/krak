@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @Profile("!test")
 public class MakeTestDataThony implements ApplicationRunner {
 
+
     private HobbyRepository hobbyRepository;
 
     Hobby h1;
@@ -30,8 +31,8 @@ public class MakeTestDataThony implements ApplicationRunner {
         hobbyRepository.save(h3);
     }
     public void run(ApplicationArguments args) {
-        hobbyRepository.deleteAll();
-        creatingHobbys();
+        //hobbyRepository.deleteAll();
+        //creatingHobbys();
     }
 }
 

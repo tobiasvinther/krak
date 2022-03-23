@@ -16,12 +16,19 @@ import java.util.Set;
 @EqualsAndHashCode
 @ToString
 public class Hobby {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    @ManyToOne
-    private Person person;
+    @Column(length = 40)
+    String hobbyName;
+
+    @Column(length = 60)
+    String description;
+
+    @ManyToMany
+    private Set<Person> personList = new HashSet<>();
 
     public Hobby() {}
 
@@ -32,12 +39,12 @@ public class Hobby {
     }
     public Hobby(HobbyRequest body) {
         this.hobbyName = body.getHobbyName();
-        this.description = body.getDescription();
+        //this.description = body.getDescription();
     }
 
-    @Column(length = 40)
-    String hobbyName;
+    public void addPerson(Person personToAdd) {
+        personList.add(personToAdd);
+    }
 
-    @Column(length = 60)
-    String description;
+
 }

@@ -20,7 +20,7 @@ public class Person extends BaseUser {
     @ManyToOne
     private Address address;
 
-    @OneToMany
+    @ManyToMany
     private Set<Hobby> hobbies = new HashSet<>();
 
     public Person() {
@@ -37,6 +37,7 @@ public class Person extends BaseUser {
 
     public void addHobby(Hobby hobby) {
         hobbies.add(hobby);
+        hobby.addPerson(this);
     }
 
 }

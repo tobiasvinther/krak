@@ -2,11 +2,13 @@ package kea.krak.dtos;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import kea.krak.entities.Hobby;
+import kea.krak.entities.Person;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Getter
@@ -18,12 +20,14 @@ public class HobbyResponse {
     int id;
 
     String name;
-    String description;
+    private Set<Person> personsList;
+    //String description;
 
     public HobbyResponse(Hobby hobby, boolean includeAll) {
         this.name = hobby.getHobbyName();
-        this.description = hobby.getDescription();
+        //this.description = hobby.getDescription();
         this.id = hobby.getId();
+        this.personsList = hobby.getPersonList();
     }
 
     public static List<HobbyResponse> getHobbysFromEntities(List<Hobby> hobbys){

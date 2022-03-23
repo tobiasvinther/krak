@@ -1,11 +1,13 @@
 package kea.krak.services;
 
 import kea.krak.dtos.PersonResponse;
+import kea.krak.entities.Hobby;
 import kea.krak.entities.Person;
 import kea.krak.repositories.PersonRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -32,8 +34,16 @@ public class PersonService {
         return personsAsEntities.stream().map(person -> new PersonResponse(person)).collect(Collectors.toList());
     }
 
-    public PersonResponse getPersonByEmail(String email) {
-        return convertPersonToPersonResponse(personRepository.getById(email));
+    public PersonResponse getPersonByUsername(String username) {
+        return convertPersonToPersonResponse(personRepository.getById(username));
+    }
+
+    public Person getPersonAsEntity(String username) {
+        return personRepository.getById(username);
+    }
+
+    public Set<Hobby> getHobbies(String username) {
+        return personRepository.getById(username).getHobbies();
     }
 
 }
