@@ -18,6 +18,8 @@ import java.util.stream.Collectors;
 public class HobbyResponse {
 
     int id;
+    String hobbyName;
+    String hobbyDescription;
 
     String name;
     private Set<Person> personsList;
@@ -30,8 +32,9 @@ public class HobbyResponse {
         this.personsList = hobby.getPersonList();
     }
 
+    /*
     public static List<HobbyResponse> getHobbysFromEntities(List<Hobby> hobbys){
         return hobbys.stream().map(hobby-> new HobbyResponse(hobby, false)).collect(Collectors.toList());
         //We will do this together
-    }
+    }*/
 }

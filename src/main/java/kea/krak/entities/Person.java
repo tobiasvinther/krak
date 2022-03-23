@@ -19,6 +19,10 @@ public class Person extends BaseUser {
 
     @ManyToOne
     private Address address;
+    //ManyToOne @JoinColumn Private Hobby hobby indsat af Thony
+    @ManyToOne
+    @JoinColumn(name = "hobby_id")
+    private Hobby hobby;
 
     @ManyToMany
     private Set<Hobby> hobbies = new HashSet<>();

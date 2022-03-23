@@ -25,6 +25,7 @@ public class Hobby {
     String hobbyName;
 
     @Column(length = 60)
+
     String description;
 
     @ManyToMany
@@ -32,9 +33,9 @@ public class Hobby {
 
     public Hobby() {}
 
-    public Hobby(String hobbyName, String description) {
+    public Hobby(String hobbyName, String hobbyDescription) {
         this.hobbyName = hobbyName;
-        this.description = description;
+        this.hobbyDescription = hobbyDescription;
 
     }
     public Hobby(HobbyRequest body) {
@@ -45,6 +46,5 @@ public class Hobby {
     public void addPerson(Person personToAdd) {
         personList.add(personToAdd);
     }
-
 
 }
