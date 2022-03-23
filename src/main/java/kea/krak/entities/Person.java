@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -22,10 +24,8 @@ public class Person extends BaseUser {
     @JoinColumn(name = "hobby_id")
     private Hobby hobby;
 
-    /*
-    @OneToMany
-    private Set<Hobby> hobbies = new HashSet;
-     */
+    @ManyToMany
+    private Set<Hobby> hobbies = new HashSet<>();
 
     public Person() {
     }
@@ -38,4 +38,10 @@ public class Person extends BaseUser {
         this.address = address;
         address.addPersonToAddress(this); //add person to address
     }
+
+    public void addHobby(Hobby hobby) {
+        hobbies.add(hobby);
+        hobby.addPerson(this);
+    }
+
 }

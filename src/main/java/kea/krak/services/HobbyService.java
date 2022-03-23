@@ -27,7 +27,7 @@ public class HobbyService {
     //get a single hobby
     /*
     public HobbyResponse getHobby(int id,boolean all) throws Exception {
-        Hobby hobby = hobbyRepository.findById(String.valueOf(id)).orElseThrow(()-> new Exception("not found"));
+        Hobby hobby = hobbyRepository.findById(id).orElseThrow(()-> new Exception("not found"));
         return new HobbyResponse(hobby, false);
     }*/
 }

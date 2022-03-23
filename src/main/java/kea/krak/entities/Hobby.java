@@ -16,6 +16,7 @@ import java.util.Set;
 @EqualsAndHashCode
 @ToString
 public class Hobby {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
@@ -24,19 +25,11 @@ public class Hobby {
     String hobbyName;
 
     @Column(length = 60)
-    String hobbyDescription;
 
-    @OneToMany(mappedBy = "hobby")
-    private Set<Person> personsAtHobby = new HashSet<>();
+    String description;
 
-    /*
-    @ManyToOne
-    @JoinColumn(name = "hobby_id")
-    private Hobby hobby; */
-
-    /*
-    @ManyToOne
-    private Person person;*/
+    @ManyToMany
+    private Set<Person> personList = new HashSet<>();
 
     public Hobby() {}
 
@@ -47,6 +40,11 @@ public class Hobby {
     }
     public Hobby(HobbyRequest body) {
         this.hobbyName = body.getHobbyName();
-        this.hobbyDescription = body.getHobbyDescription();
+        //this.description = body.getDescription();
     }
+
+    public void addPerson(Person personToAdd) {
+        personList.add(personToAdd);
+    }
+
 }
