@@ -51,22 +51,21 @@ public class PersonController {
         return personService.getPersonAsEntity(username).getHobbies();
     }
 
-
-    @PostMapping("/{username}/add-hobby")
-    public ResponseEntity<HobbyResponse> register(@RequestBody HobbyRequest hobbyRequest, @PathVariable String username) throws Exception {
+/*
+    @PatchMapping("/{username}/add-hobby")
+    public ResponseEntity<HobbyResponse> addHobby(@RequestBody HobbyRequest hobbyRequest, @PathVariable String username) throws Exception {
         personService.getPersonAsEntity(username).addHobby(hobbyRepository.getById(hobbyRequest.getId()));
         HobbyResponse hobbyResponse = hobbyService.getHobby(hobbyRequest.getId(), false);
-        System.out.println("HELLO THERE");
         return ResponseEntity.ok(hobbyResponse);
     }
+*/
 
-    /*
-    @PostMapping("/{username}/add-hobby")
+    @PatchMapping("/{username}/add-hobby")
     public void addHobby(@RequestBody HobbyRequest hobbyRequest, @PathVariable String username) {
         personService.getPersonAsEntity(username).addHobby(hobbyRepository.getById(hobbyRequest.getId()));
     }
 
-     */
+
 
 
 }
