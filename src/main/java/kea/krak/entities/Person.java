@@ -1,6 +1,7 @@
 package kea.krak.entities;
 
 import kea.krak.security.UserWithPassword;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@AllArgsConstructor
 @Entity
 @Getter
 @Setter
@@ -42,9 +44,9 @@ public class Person implements UserWithPassword {
     @ManyToOne
     private Address address;
     //ManyToOne @JoinColumn Private Hobby hobby indsat af Thony
-    @ManyToOne
-    @JoinColumn(name = "hobby_id")
-    private Hobby hobby;
+    //@ManyToOne
+    //@JoinColumn(name = "hobby_id")
+    //private Hobby hobby;
 
     @ManyToMany
     private Set<Hobby> hobbies = new HashSet<>();
@@ -55,6 +57,17 @@ public class Person implements UserWithPassword {
     public Person( String firstName, String lastName,String email, int phoneNumber, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        address.addPersonToAddress(this); //add person to address
+    }
+
+    public Person(String username, String firstName, String lastName, String password, String email, int phoneNumber, Address address) {
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = pwEncoder.encode(password);
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.address = address;

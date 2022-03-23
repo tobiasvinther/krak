@@ -1,4 +1,3 @@
-/*
 package kea.krak.configuration;
 
 import kea.krak.dtos.HobbyResponse;
@@ -53,10 +52,10 @@ public class MakeTestDataTobias implements ApplicationRunner {
     }
 
     public void createDefaultPersons() {
-        p1 = new Person("Jean-Luc","Picard", "p1@email.com", 102030, a1);
+        p1 = new Person("user1", "Jean-Luc","Picard", "123", "p1@email.com", 102030, a1);
         p1.addHobby(h1);
         p1.addHobby(h2);
-        p2 = new Person("Geordi", "LaForge", "p2@email.com" , 102030, a1);
+        p2 = new Person("user2","Geordi", "LaForge", "123",  "p2@email.com" , 102030, a1);
         personRepository.save(p1);
         personRepository.save(p2);
     }
@@ -73,4 +72,3 @@ public class MakeTestDataTobias implements ApplicationRunner {
 
 }
 
- */
