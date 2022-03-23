@@ -10,6 +10,8 @@ import kea.krak.services.PersonService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
+import java.security.Principal;
 import java.util.List;
 import java.util.Set;
 
@@ -40,9 +42,10 @@ public class PersonController {
         return personService.getAllPersons();
     }
 
-    @GetMapping("/{username}")
-    public PersonResponse getMembersFromUsername(@PathVariable String username) {
-        return (personService.getPersonByUsername(username));
+    @RolesAllowed("USER")
+    @GetMapping("/authenticatedUser")
+    public PersonResponse getMembersFromUsername(Principal principal) {
+        return (personService.getPersonByUsername(principal.getName()));
     }
 
     //todo: create a method in hobby service to convert hobby set to set of hobbyResponses
