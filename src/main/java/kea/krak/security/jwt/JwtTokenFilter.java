@@ -1,8 +1,8 @@
 package kea.krak.security.jwt;
 
 
+import kea.krak.repositories.PersonRepository;
 import kea.krak.security.UserDetailsImp;
-import kea.krak.security.UserRepository;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -25,11 +25,11 @@ import static org.springframework.util.StringUtils.*;
 public class JwtTokenFilter extends OncePerRequestFilter {
 
     private final JwtTokenUtil jwtTokenUtil;
-    private final UserRepository userRepository;
+    private final PersonRepository personRepository;
 
-    public JwtTokenFilter(JwtTokenUtil jwtTokenUtil, UserRepository userRepository) {
+    public JwtTokenFilter(JwtTokenUtil jwtTokenUtil,  PersonRepository personRepository) {
         this.jwtTokenUtil = jwtTokenUtil;
-        this.userRepository = userRepository;
+        this.personRepository = personRepository;
     }
 
     @Override
@@ -57,7 +57,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 //                .findByUsername(jwtTokenUtil.getUsername(token))
 //                .orElse(null);
 
-       UserDetails userDetails = userRepository.findByUsername(jwtTokenUtil.getUsername(token))
+       UserDetails userDetails = personRepository.findByUsername(jwtTokenUtil.getUsername(token))
                .map(UserDetailsImp::new).orElse(null);
 
         UsernamePasswordAuthenticationToken

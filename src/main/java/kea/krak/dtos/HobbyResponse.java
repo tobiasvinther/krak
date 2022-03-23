@@ -25,7 +25,7 @@ public class HobbyResponse {
     private Set<Person> personsList;
     //String description;
 
-    public HobbyResponse(Hobby hobby, boolean includeAll) {
+    public HobbyResponse(Hobby hobby) {
         this.name = hobby.getHobbyName();
         //this.description = hobby.getDescription();
         this.id = hobby.getId();

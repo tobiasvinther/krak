@@ -1,3 +1,4 @@
+/*
 package kea.krak.entities;
 
 import kea.krak.security.UserWithPassword;
@@ -13,7 +14,7 @@ import java.util.List;
 /********** IMPORTANT! DON'T CHANGE ANYTHING IN THIS FILE *************************/
 /***** EXTEND IT TO CREATE SPECIALIZED USERS (LIKE Members) ***********************/
 /********************************************************************************/
-
+/*
 @Entity
 @Getter
 @Setter
@@ -67,3 +68,5 @@ public class BaseUser implements UserWithPassword {
     }
 
 }
+
+ */

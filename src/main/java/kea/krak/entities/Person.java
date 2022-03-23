@@ -1,17 +1,39 @@
 package kea.krak.entities;
 
-import kea.krak.dtos.PersonRequest;
+import kea.krak.security.UserWithPassword;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Getter
 @Setter
-public class Person extends BaseUser {
+public class Person implements UserWithPassword {
+    @Id
+    private String username;
+
+    @Email
+    @Column(nullable = false, unique = true,length = 50)
+    private String email;
+
+    // 72 == Max length of a bcrypt encoded password
+    // https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html
+    @Column(nullable = false, length = 72)
+    private String password;
+
+    boolean enabled;
+
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "ENUM('USER','ADMIN')")
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name="user_role")
+    List<Role> roles = new ArrayList<>();
 
     private String firstName;
     private String lastName;
@@ -30,10 +52,10 @@ public class Person extends BaseUser {
     public Person() {
     }
 
-    public Person(String username, String email, String password, String firstName, String lastName, int phoneNumber, Address address) {
-        super(username, email, password);
+    public Person( String firstName, String lastName,String email, int phoneNumber, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
         this.phoneNumber = phoneNumber;
         this.address = address;
         address.addPersonToAddress(this); //add person to address
@@ -42,6 +64,26 @@ public class Person extends BaseUser {
     public void addHobby(Hobby hobby) {
         hobbies.add(hobby);
         hobby.addPerson(this);
+    }
+
+    public Person(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = pwEncoder.encode(password);
+        this.enabled = true;
+    }
+
+    @Override
+    public void setPassword(String password) {
+        this.password = pwEncoder.encode(password);
+    }
+    @Override
+    public List<Role> getRoles() {
+        return roles;
+    }
+    @Override
+    public void addRole(Role role){
+        roles.add(role);
     }
 
 }

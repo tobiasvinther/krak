@@ -1,6 +1,6 @@
 package kea.krak.security.config;
 
-import kea.krak.security.UserRepository;
+import kea.krak.repositories.PersonRepository;
 import kea.krak.security.UserWithPassword;
 import kea.krak.security.UserDetailsServiceImp;
 import kea.krak.security.jwt.JwtTokenFilter;
@@ -32,10 +32,7 @@ import javax.servlet.http.HttpServletResponse;
 )
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final UserRepository userRepository;
-
-    public SecurityConfig(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public SecurityConfig( PersonRepository personRepository) {
     }
 
     @Bean

@@ -1,3 +1,4 @@
+/*
 package kea.krak.repositories;
 
 import kea.krak.entities.Address;
@@ -25,7 +26,7 @@ class PersonRepositoryTest {
         Address a1 = new Address("Main Street", "Farpoint Station", 1);
         addressRepository.save(a1);
         //personRepository.save(new Person("p1@email.com", "Jean-Luc", "Picard", 102030, a1));
-        p1 = new Person("user1", "p1@email.com", "123", "Jean-Luc", "Picard", 102030, a1);
+        p1 = new Person("Jean-Luc","Picard", "p1@email.com", 102030, a1);
         personRepository.save(p1);
     }
 
@@ -53,3 +54,5 @@ class PersonRepositoryTest {
     }
 
 }
+
+ */

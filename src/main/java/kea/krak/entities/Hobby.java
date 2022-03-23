@@ -35,7 +35,7 @@ public class Hobby {
 
     public Hobby(String hobbyName, String hobbyDescription) {
         this.hobbyName = hobbyName;
-        this.hobbyDescription = hobbyDescription;
+        //this.hobbyDescription = hobbyDescription;
 
     }
     public Hobby(HobbyRequest body) {

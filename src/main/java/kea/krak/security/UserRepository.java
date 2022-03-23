@@ -1,3 +1,4 @@
+/*
 package kea.krak.security;
 
 import kea.krak.entities.BaseUser;
@@ -10,3 +11,5 @@ public interface UserRepository extends JpaRepository<BaseUser, Integer> {
     Boolean existsByUsername(String username);
     Boolean existsByEmail(String email);
 }
+
+ */

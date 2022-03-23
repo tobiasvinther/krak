@@ -1,8 +1,9 @@
 package kea.krak.security;
 
-import kea.krak.entities.BaseUser;
+import kea.krak.entities.Person;
+import kea.krak.repositories.PersonRepository;
 import kea.krak.security.UserDetailsImp;
-import kea.krak.security.UserRepository;
+
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -14,15 +15,15 @@ import java.util.Optional;
 @Service
 public class UserDetailsServiceImp implements UserDetailsService {
 
-    UserRepository userRepository;
+    PersonRepository personRepository;
 
-    public UserDetailsServiceImp(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserDetailsServiceImp(PersonRepository personRepository) {
+        this.personRepository = personRepository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        final Optional<BaseUser> optionalUser = userRepository.findByUsername(username);
+        final Optional<Person> optionalUser = personRepository.findByUsername(username);
         return optionalUser.map(UserDetailsImp::new).orElseThrow(() -> new BadCredentialsException(""));
     }
 

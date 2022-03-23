@@ -1,11 +1,11 @@
 package kea.krak.security.api;
 
+import kea.krak.dtos.PersonRequest;
+import kea.krak.dtos.PersonResponse;
 import kea.krak.errors.Client4xxException;
 import kea.krak.security.UserService;
 import kea.krak.security.dto.LoginRequest;
 import kea.krak.security.dto.LoginResponse;
-import kea.krak.security.dto.SignupRequest;
-import kea.krak.security.dto.SignupResponse;
 import kea.krak.security.jwt.JwtTokenUtil;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -56,7 +56,7 @@ public class AuthenticationApi {
     }
 
     @PostMapping("register")
-    public ResponseEntity<SignupResponse> register(@RequestBody @Valid SignupRequest request) {
+    public ResponseEntity<PersonResponse> register(@RequestBody @Valid PersonRequest request) {
         return ResponseEntity.ok(userService.createUser(request));
     }
 
