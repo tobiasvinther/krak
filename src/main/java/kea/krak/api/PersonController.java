@@ -42,13 +42,22 @@ public class PersonController {
         return personService.getAllPersons();
     }
 
+
     @RolesAllowed("USER")
     @GetMapping("/authenticatedUser")
     public PersonResponse getMembersFromUsername(Principal principal) {
         return (personService.getPersonByUsername(principal.getName()));
     }
 
-    //todo: create a method in hobby service to convert hobby set to set of hobbyResponses
+
+/*
+    @RolesAllowed("USER")
+    @GetMapping("/{username}")
+    public PersonResponse getMembersFromUsername(@PathVariable String username) {
+        return (personService.getPersonByUsername(username));
+    }
+*/
+
     @GetMapping("/{username}/get-hobbies")
     public Set<Hobby> getPersonHobbies(@PathVariable String username) {
         return personService.getPersonAsEntity(username).getHobbies();

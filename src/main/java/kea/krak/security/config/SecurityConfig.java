@@ -94,10 +94,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/api/persons/{email}").permitAll()
                 .antMatchers(HttpMethod.PATCH, "/api/persons/{email}/add-hobby").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/persons").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/persons/{username}").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/hobby").permitAll()
                 // All other endpoints are private
-                .anyRequest().authenticated();
-                //.anyRequest().permitAll();  //Disable Security
+                //.anyRequest().authenticated();
+                .anyRequest().permitAll();  //Disable Security
         http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
