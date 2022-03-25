@@ -60,6 +60,7 @@ public class Person implements UserWithPassword {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.address = address;
+        this.enabled = true;
         address.addPersonToAddress(this); //add person to address
     }
 
@@ -71,6 +72,7 @@ public class Person implements UserWithPassword {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.address = address;
+        this.enabled = true;
         address.addPersonToAddress(this); //add person to address
     }
 
