@@ -30,7 +30,8 @@ public class UserService {
             throw new Client4xxException("Email is used by another user");
         }
 
-        Person user = new Person(request.getUsername(), request.getEmail(), request.getPassword());
+        Person user = new Person(request.getUsername(),request.getFirstName(), request.getLastName(), request.getEmail(),
+                request.getPassword());
 
 
         //All new users are by default given the role CUSTOMER. Comment out the lines below if this is not your required behaviour

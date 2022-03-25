@@ -79,7 +79,9 @@ public class Person implements UserWithPassword {
         hobby.addPerson(this);
     }
 
-    public Person(String username, String email, String password) {
+    public Person(String username,String firstName, String lastName, String email, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.username = username;
         this.email = email;
         this.password = pwEncoder.encode(password);
