@@ -56,8 +56,9 @@ public class MakeTestDataTobias implements ApplicationRunner {
         p1.addHobby(h1);
         p1.addHobby(h2);
         p2 = new Person("user2","Geordi", "LaForge", "Test123",  "p2@email.com" , 102030, a1);
+        p2.addHobby(h1);
         personRepository.save(p1);
-        personRepository.save(p2);
+        personRepository.save(p2);//Hobby tilføjet som det eneste (TDK)
     }
 
     @Override
