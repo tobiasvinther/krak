@@ -1,6 +1,6 @@
 ﻿# Gruppe 1
 
-## Name of the project (replace with the name)
+## HOBBY
 
 ## Project Description
 Krak
@@ -14,13 +14,17 @@ Krak
 ## Branching Strategy 
 Feature branching.
 
+## Link to frontend repository
+https://github.com/tobiasvinther/krak-frontend
+
 ## Link to deployed project
-Add a link (when ready) to your deployed project
+Frontend: https://black-field-00a7bcc03.1.azurestaticapps.net/#
+Backend: https://krak.azurewebsites.net
 
 ## Who Did What
-Each member must come up with a short description when the **final deadline is reached**.
-Initially, Each of you should push a commit with just your name
-You should all add your GitHub usename in parenthesis next to your name, so I know who is who, when I check commit messages
+Jonatan arbejdede på oprettelse af bruger og på login. 
+Thony arbejdede på søge-funktionen.
+Tobias arbejdede på brugersiden/stamdata
 
 ### Member-1
 Tobias Vinther (https://github.com/tobiasvinther)
