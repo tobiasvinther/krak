@@ -18,13 +18,13 @@ Feature branching.
 https://github.com/tobiasvinther/krak-frontend
 
 ## Link to deployed project
-Frontend: https://black-field-00a7bcc03.1.azurestaticapps.net/#
-Backend: https://krak.azurewebsites.net
+- Frontend: https://black-field-00a7bcc03.1.azurestaticapps.net/#
+- Backend: https://krak.azurewebsites.net
 
 ## Who Did What
-Jonatan arbejdede på oprettelse af bruger og på login. 
-Thony arbejdede på søge-funktionen.
-Tobias arbejdede på brugersiden/stamdata
+- Jonatan arbejdede på oprettelse af bruger og på login. 
+- Thony arbejdede på søge-funktionen.
+- Tobias arbejdede på brugersiden/stamdata
 
 ### Member-1
 Tobias Vinther (https://github.com/tobiasvinther)
