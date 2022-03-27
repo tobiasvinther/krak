@@ -19,7 +19,7 @@ public class PersonResponse {
     private String username;
     private String firstName;
     private String lastName;
-    private String city;
+    //private String city;
     private Set<Hobby> hobbies;
     List<String> roles;
 
@@ -29,7 +29,7 @@ public class PersonResponse {
         this.email = person.getEmail();
         this.firstName = person.getFirstName();
         this.lastName = person.getLastName();
-        this.city = person.getAddress().getCity();
+        //this.city = person.getAddress().getCity();
         this.hobbies = person.getHobbies();
     }
 
